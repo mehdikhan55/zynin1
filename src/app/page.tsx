@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Rocket, Code, Smartphone, Brain, User } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/navigation/navigation.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
 import Image from 'next/image';
 import React from 'react';
 
@@ -227,4 +227,3 @@ export default function Home() {
     </div>
   );
 }
-
