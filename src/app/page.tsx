@@ -3,11 +3,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Rocket, Code, Smartphone, Brain, User } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/swiper.min.css';
-import 'swiper/modules/navigation/navigation.min.css';
-import 'swiper/modules/pagination/pagination.min.css';
 import Image from 'next/image';
 import React from 'react';
 
@@ -143,50 +138,6 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-semibold mb-8 text-center">Testimonials</h2>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1200: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={80}
-                      height={80}
-                      className="rounded-full mr-4"
-                    />
-                  <div>
-                    <CardTitle className="text-xl font-semibold">{testimonial.name}</CardTitle>
-                    <CardDescription className="text-gray-500">{testimonial.title}</CardDescription>
-                  </div>
-                </div>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground italic">"{testimonial.quote}"</p>
-                </CardContent>
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </section>
 
       {/* Rocket Infographic Section */}
