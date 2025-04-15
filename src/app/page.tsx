@@ -3,8 +3,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Rocket, Code, Smartphone, Brain, User } from 'lucide-react';
-import Image from 'next/image';
 import React from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 
 const testimonials = [
   {
@@ -30,22 +31,50 @@ const testimonials = [
   },
 ];
 
+const teamMembers = [
+  {
+    id: 1,
+    name: 'John Doe',
+    title: 'AI Engineer',
+    description: 'Expert in machine learning and AI-driven web solutions.',
+    avatarUrl: 'https://picsum.photos/80/80?random=4',
+    skills: ['Machine Learning', 'Web Development', 'AI Solutions'],
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    title: 'App Development Specialist',
+    description: 'Passionate about creating innovative and user-friendly app experiences.',
+    avatarUrl: 'https://picsum.photos/80/80?random=5',
+    skills: ['App Development', 'UI/UX Design', 'Mobile Solutions'],
+  },
+  {
+    id: 3,
+    name: 'David Lee',
+    title: 'Solutions Architect',
+    description: 'Dedicated to designing and implementing AI-powered solutions.',
+    avatarUrl: 'https://picsum.photos/80/80?random=6',
+    skills: ['Solutions Architecture', 'AI Implementation', 'Cloud Computing'],
+  },
+];
+
 export default function Home() {
   return (
     <div className="container mx-auto py-10 fade-in">
+      {/* Hero Section */}
       <section className="mb-16 text-center">
-        <h1 className="text-4xl font-bold mb-6">Zynin AI Solutions</h1>
+        <h1 className="text-5xl font-bold mb-6">Zynin AI Solutions</h1>
         <p className="text-lg text-muted-foreground mb-8">
           AI-powered customized solutions for web and app development.
         </p>
-        <Button variant="default" size="lg">Get Started</Button>
+        <Button variant="default" size="lg">Explore Our Solutions</Button>
       </section>
 
       {/* Services Section */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-8 text-center">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="hover:shadow-lg transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold flex items-center"><Code className="mr-2" /> Web Development</CardTitle>
               <CardDescription className="text-gray-500">
@@ -54,13 +83,13 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                We leverage AI to create intelligent, responsive websites.
+                We leverage AI to create intelligent, responsive websites tailored to your business needs. From e-commerce platforms to corporate sites, we deliver exceptional digital experiences.
               </p>
               <Button variant="secondary">Learn More</Button>
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold flex items-center"><Smartphone className="mr-2" /> App Development</CardTitle>
               <CardDescription className="text-gray-500">
@@ -69,13 +98,13 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                Our AI-powered apps are designed to meet your unique business needs.
+                Our AI-powered apps are designed to meet your unique business needs. We create innovative and user-friendly app experiences that drive engagement and growth.
               </p>
               <Button variant="secondary">Explore</Button>
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold flex items-center"><Brain className="mr-2" /> AI Solutions</CardTitle>
               <CardDescription className="text-gray-500">
@@ -84,7 +113,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                From automation to analytics, we harness the power of AI to drive innovation.
+                From automation to analytics, we harness the power of AI to drive innovation. Our tailored solutions address specific business challenges and unlock new opportunities.
               </p>
               <Button variant="secondary">Discover</Button>
             </CardContent>
@@ -92,51 +121,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-8 text-center">
+          What Our Clients Say
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
+            <Card key={testimonial.id} className="hover:shadow-xl transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex items-center mb-4">
+                  <Avatar className="mr-4">
+                    <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <CardTitle className="text-xl font-semibold">{testimonial.name}</CardTitle>
+                    <CardDescription className="text-gray-500">{testimonial.title}</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground italic">
+                  "{testimonial.quote}"
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="mb-16">
-        <h2 className="text-3xl font-semibold mb-8 text-center">Our Team</h2>
+        <h2 className="text-3xl font-semibold mb-8 text-center">Meet Our Experts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold flex items-center"><User className="mr-2" /> John Doe</CardTitle>
-              <CardDescription className="text-gray-500">
-                AI Engineer
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Expert in machine learning and AI-driven web solutions.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold flex items-center"><User className="mr-2" /> Jane Smith</CardTitle>
-              <CardDescription className="text-gray-500">
-                App Development Specialist
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Passionate about creating innovative and user-friendly app experiences.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold flex items-center"><User className="mr-2" /> David Lee</CardTitle>
-              <CardDescription className="text-gray-500">
-                Solutions Architect
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Dedicated to designing and implementing AI-powered solutions.
-              </p>
-            </CardContent>
-          </Card>
+          {teamMembers.map((member) => (
+            <Card key={member.id} className="hover:shadow-xl transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex items-center mb-4">
+                  <Avatar className="mr-4">
+                    <AvatarImage src={member.avatarUrl} alt={member.name} />
+                    <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <CardTitle className="text-xl font-semibold">{member.name}</CardTitle>
+                    <CardDescription className="text-gray-500">{member.title}</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {member.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {member.skills.map((skill, index) => (
+                    <Badge key={index} variant="secondary">{skill}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
