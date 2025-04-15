@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,24 +6,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-.futuristic-gradient {
-  background: linear-gradient(270deg, #dff9fb, #eaf6f7, #f3fbfb, #ffffff);
-  background-size: 400% 400%;
-  animation: gradientAnimation 30s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .fade-in {
@@ -43,25 +26,25 @@ body {
 
 @layer base {
   :root {
-    --background: 240 4.8% 95.9%; /* Slightly off-white */
+    --background: 240 4.8% 95.9%; /* Light gray */
     --foreground: 240 5.9% 10%; /* Dark gray */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 224.3 76.3% 48%; /* Electric blue */
-    --primary-foreground: 0 0% 100%;
+    --primary: 160 100% 70%; /* Aqua (#7FFFD4 in HSL) */
+    --primary-foreground: 240 5.9% 10%; /* Dark gray */
     --secondary: 220 14.3% 90.1%; /* Light gray */
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 220 14.3% 90.1%; /* Light gray */
     --muted-foreground: 240 5.3% 46.1%; /* Medium gray */
-    --accent: 224.3 76.3% 68%; /* Light electric blue */
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 160 50% 25%; /* Teal (#008080 in HSL) - Darker shade for contrast */
+    --accent-foreground: 240 4.8% 95.9%; /* Light gray */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 4% 98%;
     --border: 220 13% 91%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 224.3 76.3% 48%; /* Electric blue */
+    --ring: 160 50% 25%; /* Teal (#008080 in HSL) */
     --radius: 0.75rem;
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -80,24 +63,24 @@ body {
 
   .dark {
     --background: 240 5.9% 10%; /* Dark gray */
-    --foreground: 240 4.8% 95.9%; /* Off-white */
+    --foreground: 240 4.8% 95.9%; /* Light gray */
     --card: 240 5.9% 10%;
     --card-foreground: 240 4.8% 95.9%;
     --popover: 240 5.9% 10%;
     --popover-foreground: 240 4.8% 95.9%;
-    --primary: 224.3 76.3% 48%; /* Electric blue */
-    --primary-foreground: 0 0% 100%;
+    --primary: 160 100% 70%; /* Aqua */
+    --primary-foreground: 240 5.9% 10%; /* Dark gray */
     --secondary: 240 5.3% 26.1%; /* Darker gray */
     --secondary-foreground: 240 4.8% 95.9%;
     --muted: 240 5.3% 26.1%; /* Darker gray */
     --muted-foreground: 240 3.8% 66.1%; /* Light gray */
-    --accent: 240 4.8% 25.9%; /* Dark electric blue */
+    --accent: 160 50% 25%; /* Teal */
     --accent-foreground: 240 4.8% 95.9%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 4% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 224.3 76.3% 48%; /* Electric blue */
+    --ring: 160 50% 25%; /* Teal */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -105,8 +88,8 @@ body {
     --chart-5: 340 75% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 160 100% 70%; /* Aqua */
+    --sidebar-primary-foreground: 240 5.9% 10%; /* Dark gray */
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
