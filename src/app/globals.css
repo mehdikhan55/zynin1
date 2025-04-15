@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +7,40 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+.futuristic-gradient {
+  background: linear-gradient(270deg, #dff9fb, #eaf6f7, #f3fbfb, #ffffff);
+  background-size: 400% 400%;
+  animation: gradientAnimation 30s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @layer base {
   :root {
     --background: 220 14.3% 95.9%;
@@ -16,19 +49,19 @@ body {
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 4% 98%;
-    --secondary: 210 40% 96.1%;
+    --primary: 160 100% 50%;  /* Aqua */
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96.1%; /* Light Gray */
     --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 96.1%; /* Light Gray */
+    --muted-foreground: 220 12.9% 40%;  /* Dark Gray */
+    --accent: 180 100% 25%; /* Teal */
+    --accent-foreground: 210 4% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 4% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 160 100% 50%;  /* Aqua */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -52,19 +85,19 @@ body {
     --card-foreground: 210 4% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 4% 98%;
-    --primary: 217.2 32.6% 52.9%;
+    --primary: 160 100% 50%;  /* Aqua */
     --primary-foreground: 210 4% 98%;
     --secondary: 217.2 32.6% 22.9%;
     --secondary-foreground: 210 4% 98%;
     --muted: 216 34% 17%;
     --muted-foreground: 215 20.2% 65.9%;
-    --accent: 216 34% 17%;
+    --accent: 180 100% 25%; /* Teal */
     --accent-foreground: 210 4% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 4% 98%;
     --border: 216 34% 17%;
     --input: 216 34% 17%;
-    --ring: 224.3 76.3% 48%;
+    --ring: 160 100% 50%;  /* Aqua */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
